@@ -1,0 +1,39 @@
+{
+  "name": "@qh-web-ui-kit/ui",
+  "version": "0.1.0",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./*": "./dist/*"
+  },
+
+
+  "files": ["dist"],
+  "scripts": {
+    "clean": "rimraf dist",
+    "build:js": "tsup src/index.ts --format esm --dts",
+    "build:css": "bunx tailwindcss-cli -i ./src/styles.css -o ./dist/styles.css",
+    "dev:css": "bunx tailwindcss-cli -i ./src/styles.css -o ./dist/styles.css --watch",
+    "build": "bun run clean && bun run build:js && bun run build:css",
+    "dev": "tsup src/index.ts --format esm --dts --watch",
+
+    "setup": "bun run build && bun link"
+  },
+
+  "peerDependencies": {
+    "react": "^18 || ^19",
+    "react-dom": "^18 || ^19"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.0",
+    "@types/react-dom": "^18.3.0",
+    "rimraf": "^6.0.1",
+    "tailwindcss": "^4.1.12",
+    "tailwindcss-cli": "^0.1.2",
+    "tsup": "^8.3.0",
+    "typescript": "^5.5.4"
+  }
+}
