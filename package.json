@@ -1,5 +1,5 @@
 {
-  "name": "@qh-web-ui-kit/ui",
+  "name": "@quantumhubstartup/ui-kit",
   "version": "0.1.0",
   "type": "module",
   "exports": {
@@ -9,31 +9,36 @@
     },
     "./*": "./dist/*"
   },
-
-
   "files": ["dist"],
   "scripts": {
     "clean": "rimraf dist",
     "build:js": "tsup src/index.ts --format esm --dts",
-    "build:css": "bunx tailwindcss-cli -i ./src/styles.css -o ./dist/styles.css",
-    "dev:css": "bunx tailwindcss-cli -i ./src/styles.css -o ./dist/styles.css --watch",
-    "build": "bun run clean && bun run build:js && bun run build:css",
-    "dev": "tsup src/index.ts --format esm --dts --watch",
-
+    "build:css": "postcss ./src/styles.css -o ./dist/styles.css",
+    "dev:js": "tsup src/index.ts --format esm --dts --watch",
+    "dev:css": "postcss ./src/styles.css -o ./dist/styles.css --watch",
+    "dev:build": "bun run clean && bun run build:js && bun run build:css",
+    "build": "bun run build",
+    "dev": "concurrently \"bun run dev:js\" \"bun run dev:css\"",
     "setup": "bun run build && bun link"
   },
-
   "peerDependencies": {
-    "react": "^18 || ^19",
-    "react-dom": "^18 || ^19"
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
   },
   "devDependencies": {
-    "@types/react": "^18.3.0",
-    "@types/react-dom": "^18.3.0",
+    "@types/react": "^18.3.24",
+    "@types/react-dom": "^18.3.7",
+    "autoprefixer": "^10.4.21",
+    "concurrently": "^9.2.1",
+    "postcss-cli": "^11.0.1",
     "rimraf": "^6.0.1",
     "tailwindcss": "^4.1.12",
-    "tailwindcss-cli": "^0.1.2",
-    "tsup": "^8.3.0",
-    "typescript": "^5.5.4"
+    "tsup": "^8.5.0",
+    "typescript": "^5.9.2"
+  },
+  "dependencies": {
+    "@tailwindcss/postcss": "^4.1.12",
+    "clsx": "^2.1.1",
+    "postcss": "^8.5.6"
   }
 }
