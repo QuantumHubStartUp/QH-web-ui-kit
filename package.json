@@ -1,6 +1,6 @@
 {
   "name": "@quantumhubstartup/ui-kit",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "type": "module",
   "exports": {
     ".": {
@@ -19,11 +19,13 @@
     "dev:build": "bun run clean && bun run build:js && bun run build:css",
     "build": "bun run build",
     "dev": "concurrently \"bun run dev:js\" \"bun run dev:css\"",
-    "setup": "bun run build && bun link"
+    "setup": "bun run build && bun link",
+
+    "deploy": "npm publish --access public"
   },
   "peerDependencies": {
-    "react": "^19.1.1",
-    "react-dom": "^19.1.1"
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0"
   },
   "devDependencies": {
     "@types/react": "^18.3.24",
