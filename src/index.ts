@@ -5,4 +5,4 @@ import "./styles.css";
 
 export { Button } from "./ui/Button/Button";
 export { Loader } from "./ui/Loader/Loader";
-export { Checkbox } from "./ui/Checkbox";
+export { Checkbox } from "./ui/Checkbox/Checkbox";

@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes, ComponentPropsWithoutRef } from "react";
+import { ButtonHTMLAttributes } from "react";
 import clsx from "clsx";
 
 type CheckboxVariant = "primary" | "secondary" | "success" | "danger" | "ghost";

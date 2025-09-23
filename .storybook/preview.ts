@@ -1,6 +1,7 @@
 import type { Preview } from '@storybook/react-vite'
 
 import "../src/styles.css";
+import { themes } from 'storybook/internal/theming';
 
 
 const preview: Preview = {
@@ -10,6 +11,14 @@ const preview: Preview = {
        color: /(background|color)$/i,
        date: /Date$/i,
       },
+    },
+
+    themes: {
+      default: "light",
+      list: [
+        { name: "light", class: "light", color: "#ffffff" },
+        { name: "dark", class: "dark", color: "#000000" },
+      ],
     },
 
     a11y: {

@@ -1,2 +1,15 @@
 @import "tailwindcss";
 
+
+
+
+
+:root {
+    --primary-text-color: black;
+    --background-color: white;
+}
+
+.dark {
+    --primary-text-color: white;
+    --background-color: black;
+}
