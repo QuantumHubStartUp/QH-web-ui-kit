@@ -1,13 +1,21 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-    content: [
-      "./src/**/*.{js,ts,jsx,tsx,mdx}",
-      "./.storybook/**/*.{js,ts,jsx,tsx,mdx}", // 👈 важно, иначе стили могут не подтянуться в Storybook
-    ],
-    darkMode: "class", // 👈 переключение по классу (нужно для Storybook)
-    theme: {
-      extend: {},
+  content: [
+    "./src/**/*.{js,jsx,ts,tsx}",
+    "./.storybook/**/*.{js,jsx,ts,tsx}",
+  ],
+  // Уберите darkMode, так как в v4 используется другой подход
+  theme: {
+    extend: {
+      colors: {
+        // Определите цвета для темной темы явно
+        dark: {
+          background: '#1a202c',
+          text: '#f7fafc',
+          // добавьте другие цвета по необходимости
+        }
+      }
     },
-    plugins: [],
-  };
-  
+  },
+  plugins: [],
+}

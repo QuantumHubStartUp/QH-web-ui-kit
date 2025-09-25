@@ -1,3 +1,5 @@
+"use client";
+
 import { InputHTMLAttributes } from "react";
 import clsx from "clsx";
 
@@ -18,7 +20,7 @@ export function Input({
   ...props
 }: InputProps) {
   const baseStyle =
-    "rounded-xl font-medium transition-colors duration-200 focus:outline-none focus:ring-2";
+    "rounded-xl font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-opacity-50 border-2";
 
   const selectedSize = {
     sm: "px-3 py-1 text-sm",
@@ -26,22 +28,18 @@ export function Input({
     lg: "px-6 py-3 text-lg",
   }[inputSize];
 
+  // Используем CSS переменные вместо dark: классов
   const selectedVariants = {
-    primary:
-      "bg-white text-black border-2 border-cyan-100 focus:ring-cyan-300 dark:bg-[#121212] dark:text-white dark:border-cyan-100 dark:focus:ring-[#13ECF4]",
-    secondary:
-      "bg-gray-200 text-gray-800 border border-gray-300 focus:ring-gray-400 dark:bg-gray-700 dark:text-gray-100 dark:border-gray-600 dark:focus:ring-gray-500",
-    success:
-      "bg-white text-black border-2 border-green-600 focus:ring-green-400 dark:bg-[#121212] dark:text-white dark:border-green-500 dark:focus:ring-green-600",
-    danger:
-      "bg-white text-black border-2 border-red-600 focus:ring-red-400 dark:bg-[#121212] dark:text-white dark:border-red-500 dark:focus:ring-red-600",
-    ghost:
-      "bg-transparent text-gray-800 border border-transparent focus:ring-gray-300 dark:text-gray-100 dark:focus:ring-gray-600",
+    primary: "bg-[var(--input-bg)] text-[var(--input-text)] border-[var(--color-primary)] focus:ring-[var(--color-primary)]",
+    secondary: "bg-[var(--input-bg-secondary)] text-[var(--input-text)] border-gray-300 focus:ring-gray-400 dark:border-gray-600",
+    success: "bg-[var(--input-bg)] text-[var(--input-text)] border-green-500 focus:ring-green-400",
+    danger: "bg-[var(--input-bg)] text-[var(--input-text)] border-red-500 focus:ring-red-400",
+    ghost: "bg-transparent text-[var(--input-text)] border-transparent focus:ring-[var(--color-primary)]",
   }[variant];
 
   const states = disabled
     ? "opacity-50 cursor-not-allowed"
-    : "hover:cursor-text";
+    : "cursor-text hover:border-[var(--color-primary-hover)]";
 
   return (
     <input

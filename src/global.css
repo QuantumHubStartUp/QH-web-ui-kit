@@ -1,15 +1,24 @@
 @import "tailwindcss";
 
-
-
-
-
+/* Определяем CSS переменные для тем */
 :root {
-    --primary-text-color: black;
-    --background-color: white;
+  --color-primary: #06b6d4;
+  --color-primary-hover: #0891b2;
+  --color-background: #ffffff;
+  --color-text: #000000;
+  --color-border: #e5e7eb;
 }
 
 .dark {
-    --primary-text-color: white;
-    --background-color: black;
+  --color-primary: #06b6d4;
+  --color-primary-hover: #67e8f9;
+  --color-background: #0f172a;
+  --color-text: #ffffff;
+  --color-border: #334155;
+}
+
+/* Базовые стили с использованием CSS переменных */
+body {
+  background-color: var(--color-background);
+  color: var(--color-text);
 }
