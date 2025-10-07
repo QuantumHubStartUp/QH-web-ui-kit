@@ -1,0 +1,51 @@
+:root {
+  --alert-info-bg: #dbeafe;
+  --alert-info-border: #93c5fd;
+  --alert-info-text: #1e40af;
+  --alert-info-shadow: 0 10px 15px -3px rgb(59 130 246 / 0.1);
+}
+
+.dark {
+  --alert-info-bg: #1e3a8a;
+  --alert-info-border: #1d4ed8;
+  --alert-info-text: #dbeafe;
+  --alert-info-shadow: 0 25px 50px -12px rgb(59 130 246 / 0.25);
+}
+
+
+@layer utilities {
+    .alert-info {
+      background-color: var(--alert-info-bg);
+      border-color: var(--alert-info-border);
+      color: var(--alert-info-text);
+      box-shadow: var(--alert-info-shadow);
+    }
+    
+    .alert-success {
+      background-color: var(--alert-success-bg);
+      border-color: var(--alert-success-border);
+      color: var(--alert-success-text);
+      box-shadow: var(--alert-success-shadow);
+    }
+    
+    .alert-warning {
+      background-color: var(--alert-warning-bg);
+      border-color: var(--alert-warning-border);
+      color: var(--alert-warning-text);
+      box-shadow: var(--alert-warning-shadow);
+    }
+    
+    .alert-error {
+      background-color: var(--alert-error-bg);
+      border-color: var(--alert-error-border);
+      color: var(--alert-error-text);
+      box-shadow: var(--alert-error-shadow);
+    }
+    
+    .alert-neutral {
+      background-color: var(--alert-neutral-bg);
+      border-color: var(--alert-neutral-border);
+      color: var(--alert-neutral-text);
+      box-shadow: var(--alert-neutral-shadow);
+    }
+} 
