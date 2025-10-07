@@ -1,2 +1,3 @@
 [build]
-command="bun run build-storybook"
+    command="bun run build-storybook"
+    publish = "storybook-static"
