@@ -1,0 +1,75 @@
+:root {
+    --input-primary-bg: #13ECF4;
+    --input-primary-text: grey;
+    --input-primary-border: #00E4E7;
+    --input-primary-ring: #3b82f6;
+
+    
+    --input-secondary-bg: #f3f4f6;
+
+    
+    --input-success-bg: #10b981;
+
+    
+    --input-danger-bg: #ef4444;
+
+    
+    --input-ghost-text: #374151;
+
+    
+    --input-outline-border: #2563eb;
+
+  }
+  
+  .dark {   
+    --input-primary-bg: #13ECF4;
+    --input-primary-text: #0000;
+    --input-primary-border: #00E4E7;
+    --input-primary-ring: #3b82f6;
+
+
+    
+    --input-secondary-bg: #374151;
+
+
+    
+    --input-success-bg: #34d399;
+
+    
+    --input-danger-bg: #f87171;
+
+    
+    --input-ghost-text: #d1d5db;
+
+    
+    --input-outline-border: #60a5fa;
+ 
+
+  }
+  
+  @layer utilities {
+
+      .input {
+        cursor:auto;
+        border-radius: 10px;
+        transition: background-color 0.3s ease;
+        font-weight: 600;
+        outline: none;
+      }
+      
+      /* Input variants */
+      .input-primary {
+   
+        color: var(--input-primary-text);
+        border: 3px solid var(--input-primary-border);
+      }
+      
+      .input-primary:hover {
+
+        border-color: var(--input-primary-border);
+      }
+      
+      .input-primary:focus-visible {
+        ring-color: var(--input-primary-ring);
+      }  
+  }

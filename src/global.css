@@ -1,7 +1,15 @@
 @import "tailwindcss";
 @import "./ui/index.css";
 
+:root {
+  --color-background: #fff;
+  --color-text: #000;
+}
 
+.dart {
+  --color-background: #000;
+  --color-text: #fff;
+}
 
 body {
   background-color: var(--color-background);

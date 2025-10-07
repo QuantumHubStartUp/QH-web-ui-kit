@@ -1,57 +1,73 @@
 "use client";
 
-import { InputHTMLAttributes } from "react";
+import React from "react";
+import { type VariantProps } from "class-variance-authority";
+import { inputVariants } from "./variants";
 import clsx from "clsx";
 
-type InputVariant = "primary" | "secondary" | "success" | "danger" | "ghost";
-type InputSize = "sm" | "md" | "lg";
 
 interface InputProps
-  extends Omit<InputHTMLAttributes<HTMLInputElement>, "size"> {
-  variant?: InputVariant;
-  inputSize?: InputSize; 
+  extends Omit<React.InputHTMLAttributes<HTMLInputElement>, "size">,
+    VariantProps<typeof inputVariants> {
+  icon?: React.ReactNode;
+  loading?: boolean;
+  disabled?: boolean;
 }
 
-export function Input({
-  variant = "primary",
-  inputSize = "md",
-  disabled,
+const Input: React.FC<InputProps> = ({
   className,
+  variant,
+  size,
+  icon,
+  loading = false,
+  disabled = false,
   ...props
-}: InputProps) {
-  const baseStyle =
-    "rounded-xl font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-opacity-50 border-2";
-
-  const selectedSize = {
-    sm: "px-3 py-1 text-sm",
-    md: "px-4 py-2 text-base",
-    lg: "px-6 py-3 text-lg",
-  }[inputSize];
-
-  // Используем CSS переменные вместо dark: классов
-  const selectedVariants = {
-    primary: "bg-[var(--input-bg)] text-[var(--input-text)] border-[var(--color-primary)] focus:ring-[var(--color-primary)]",
-    secondary: "bg-[var(--input-bg-secondary)] text-[var(--input-text)] border-gray-300 focus:ring-gray-400 dark:border-gray-600",
-    success: "bg-[var(--input-bg)] text-[var(--input-text)] border-green-500 focus:ring-green-400",
-    danger: "bg-[var(--input-bg)] text-[var(--input-text)] border-red-500 focus:ring-red-400",
-    ghost: "bg-transparent text-[var(--input-text)] border-transparent focus:ring-[var(--color-primary)]",
-  }[variant];
-
-  const states = disabled
-    ? "opacity-50 cursor-not-allowed"
-    : "cursor-text hover:border-[var(--color-primary-hover)]";
-
+}) => {
   return (
-    <input
-      className={clsx(
-        baseStyle,
-        selectedSize,
-        selectedVariants,
-        states,
-        className
+    <div className="relative w-full flex items-center">
+      {icon && !loading && (
+        <span className="absolute left-3 text-gray-400 pointer-events-none">
+          {icon}
+        </span>
       )}
-      disabled={disabled}
-      {...props}
-    />
+
+      {loading && (
+        <svg
+          className="absolute left-3 h-4 w-4 animate-spin text-gray-400"
+          fill="none"
+          viewBox="0 0 24 24"
+        >
+          <circle
+            className="opacity-25"
+            cx="12"
+            cy="12"
+            r="10"
+            stroke="currentColor"
+            strokeWidth="4"
+          />
+          <path
+            className="opacity-75"
+            fill="currentColor"
+            d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+          />
+        </svg>
+      )}
+
+      <input
+        className={clsx(
+          inputVariants({ variant, size }),
+          disabled && "opacity-50 cursor-not-allowed",
+          !disabled && "cursor-text hover:border-[var(--color-primary-hover)]",
+          (icon || loading) && "pl-10",
+          className
+        )}
+        disabled={disabled || loading}
+        {...props}
+      />
+    </div>
   );
-}
+};
+
+Input.displayName = "Input";
+
+export { Input };
