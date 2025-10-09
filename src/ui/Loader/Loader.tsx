@@ -7,7 +7,7 @@ type LoaderSize = "sm" | "md" | "lg";
 interface LoaderProps extends HTMLAttributes<HTMLSpanElement> {
   variant?: LoaderVariant;
   size?: LoaderSize;
-  label?: string; // "Загрузка..." можно передавать как текст
+  label?: string; 
   inline?: boolean;
 }
 
