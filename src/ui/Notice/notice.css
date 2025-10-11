@@ -1,0 +1,45 @@
+/* styles/theme.css */
+:root {
+  /* Notice Colors */
+  --notice-info-bg: #dbeafe;
+  --notice-info-border: #93c5fd;
+  --notice-info-text: #1e40af;
+  --notice-progress-info: #3b82f6;
+  
+  --notice-success-bg: #d1fae5;
+  --notice-success-border: #a7f3d0;
+  --notice-success-text: #065f46;
+  --notice-progress-success: #10b981;
+  
+  --notice-warning-bg: #fef3c7;
+  --notice-warning-border: #fde68a;
+  --notice-warning-text: #92400e;
+  --notice-progress-warning: #f59e0b;
+  
+  --notice-error-bg: #fee2e2;
+  --notice-error-border: #fca5a5;
+  --notice-error-text: #991b1b;
+  --notice-progress-error: #ef4444;
+}
+
+.dark {
+  --notice-info-bg: rgba(59, 130, 246, 0.2);
+  --notice-info-border: rgba(59, 130, 246, 0.4);
+  --notice-info-text: #93c5fd;
+  --notice-progress-info: #60a5fa;
+  
+  --notice-success-bg: rgba(16, 185, 129, 0.2);
+  --notice-success-border: rgba(16, 185, 129, 0.4);
+  --notice-success-text: #6ee7b7;
+  --notice-progress-success: #34d399;
+  
+  --notice-warning-bg: rgba(245, 158, 11, 0.2);
+  --notice-warning-border: rgba(245, 158, 11, 0.4);
+  --notice-warning-text: #fcd34d;
+  --notice-progress-warning: #fbbf24;
+  
+  --notice-error-bg: rgba(239, 68, 68, 0.2);
+  --notice-error-border: rgba(239, 68, 68, 0.4);
+  --notice-error-text: #fca5a5;
+  --notice-progress-error: #f87171;
+}
