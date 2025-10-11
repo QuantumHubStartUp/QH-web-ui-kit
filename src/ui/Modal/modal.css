@@ -1,0 +1,21 @@
+/* styles/theme.css */
+:root {
+  /* Modal Colors */
+  --modal-overlay-bg: rgba(0, 0, 0, 0.5);
+  --modal-backdrop-blur: blur(8px);
+  --modal-bg: #ffffff;
+  --modal-text: #111827;
+  --modal-border: #e5e7eb;
+  --modal-header-border: #f3f4f6;
+  --modal-footer-border: #f3f4f6;
+}
+
+.dark {
+  --modal-overlay-bg: rgba(0, 0, 0, 0.7);
+  --modal-backdrop-blur: blur(12px);
+  --modal-bg: #1f2937;
+  --modal-text: #f9fafb;
+  --modal-border: #374151;
+  --modal-header-border: #374151;
+  --modal-footer-border: #374151;
+}

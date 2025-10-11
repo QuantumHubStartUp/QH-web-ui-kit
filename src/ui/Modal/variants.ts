@@ -32,8 +32,6 @@
 // const modalContentVariants = cva(
 //   [
 //     'relative',
-//     'bg-white',
-//     'dark:bg-gray-900',
 //     'rounded-xl',
 //     'shadow-2xl',
 //     'border',
@@ -44,7 +42,11 @@
 //     'transition-all',
 //     'duration-300',
 //     'ease-in-out',
-//     'focus:outline-none'
+//     'focus:outline-none',
+//     // Используем CSS variables вместо data-attributes
+//     'bg-background',
+//     'text-foreground',
+//     'border-border'
 //   ],
 //   {
 //     variants: {
@@ -77,7 +79,10 @@
 //     'pb-4',
 //     'border-b',
 //     'border-gray-100',
-//     'dark:border-gray-800'
+//     'dark:border-gray-800',
+//     // Data attributes для Tailwind v4
+//     'data-[theme=light]:border-gray-100',
+//     'data-[theme=dark]:border-gray-800'
 //   ],
 //   {
 //     variants: {
@@ -119,7 +124,10 @@
 //     'pt-4',
 //     'border-t',
 //     'border-gray-100',
-//     'dark:border-gray-800'
+//     'dark:border-gray-800',
+//     // Data attributes для Tailwind v4
+//     'data-[theme=light]:border-gray-100',
+//     'data-[theme=dark]:border-gray-800'
 //   ],
 //   {
 //     variants: {
@@ -149,6 +157,7 @@
 //   modalFooterVariants
 // };
 
+
 import { cva } from "class-variance-authority";
 
 const modalOverlayVariants = cva(
@@ -160,22 +169,29 @@ const modalOverlayVariants = cva(
     'items-center',
     'justify-center',
     'p-4',
-    'bg-black/50',
-    'backdrop-blur-sm',
     'transition-all',
     'duration-300',
-    'ease-in-out'
+    'ease-in-out',
+    'bg-[var(--modal-overlay-bg)]',
+    'backdrop-blur-sm' // или используйте CSS переменную
   ],
   {
     variants: {
       animation: {
-        fade: ['animate-in', 'fade-in'],
-        slide: ['animate-in', 'slide-in-from-bottom-10'],
-        scale: ['animate-in', 'zoom-in-95']
+        fade: [],
+        slide: [],
+        scale: []
+      },
+      backdrop: {
+        default: ['backdrop-blur-sm'],
+        strong: ['backdrop-blur-md'],
+        light: ['backdrop-blur'],
+        none: ['backdrop-blur-none']
       }
     },
     defaultVariants: {
-      animation: 'fade'
+      animation: 'fade',
+      backdrop: 'default'
     }
   }
 );
@@ -186,18 +202,16 @@ const modalContentVariants = cva(
     'rounded-xl',
     'shadow-2xl',
     'border',
-    'border-gray-200',
-    'dark:border-gray-700',
     'max-h-[90vh]',
     'overflow-hidden',
     'transition-all',
     'duration-300',
     'ease-in-out',
     'focus:outline-none',
-    // Используем CSS variables вместо data-attributes
-    'bg-background',
-    'text-foreground',
-    'border-border'
+    // CSS переменные для цветов
+    'bg-[var(--modal-bg)]',
+    'text-[var(--modal-text)]',
+    'border-[var(--modal-border)]'
   ],
   {
     variants: {
@@ -209,9 +223,9 @@ const modalContentVariants = cva(
         full: ['max-w-[95vw]', 'w-full']
       },
       animation: {
-        fade: ['animate-in', 'fade-in', 'duration-300'],
-        slide: ['animate-in', 'slide-in-from-bottom-10', 'duration-300'],
-        scale: ['animate-in', 'zoom-in-95', 'duration-300']
+        fade: [],
+        slide: [],
+        scale: []
       }
     },
     defaultVariants: {
@@ -229,11 +243,7 @@ const modalHeaderVariants = cva(
     'p-6',
     'pb-4',
     'border-b',
-    'border-gray-100',
-    'dark:border-gray-800',
-    // Data attributes для Tailwind v4
-    'data-[theme=light]:border-gray-100',
-    'data-[theme=dark]:border-gray-800'
+    'border-[var(--modal-header-border)]'
   ],
   {
     variants: {
@@ -249,7 +259,11 @@ const modalHeaderVariants = cva(
 );
 
 const modalBodyVariants = cva(
-  ['p-6'],
+  [
+    'p-6',
+    'bg-[var(--modal-bg)]',
+    'text-[var(--modal-text)]'
+  ],
   {
     variants: {
       padding: {
@@ -269,16 +283,12 @@ const modalFooterVariants = cva(
   [
     'flex',
     'items-center',
-    'justify-end',
     'gap-3',
     'p-6',
     'pt-4',
     'border-t',
-    'border-gray-100',
-    'dark:border-gray-800',
-    // Data attributes для Tailwind v4
-    'data-[theme=light]:border-gray-100',
-    'data-[theme=dark]:border-gray-800'
+    'border-[var(--modal-footer-border)]',
+    'bg-[var(--modal-bg)]'
   ],
   {
     variants: {
