@@ -5,7 +5,8 @@ export const textVariants = cva(
   [
     'text-foreground', 
     'transition-colors',
-    'duration-200'
+    'duration-200',
+    "font-mono",
   ],
   {
     variants: {

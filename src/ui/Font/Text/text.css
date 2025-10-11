@@ -1,0 +1,37 @@
+:root {
+    --text-muted-foreground: #6b7280;
+    --text-success: #10b981;
+    --text-warning: #f59e0b;
+    --text-destructive: #ef4444;
+    --text-info: #3b82f6;
+}
+  
+.dark {   
+    --text-muted-foreground: #6b7280;
+    --text-success: #10b981;
+    --text-warning: #f59e0b;
+    --text-destructive: #ef4444;
+    --text-info: #3b82f6;
+}
+  
+@layer utilities {
+    .text-muted-foreground {
+        color: var(--text-muted-foreground);
+    }
+
+    .text-success {
+        color: var(--text-success);
+    }
+
+    .text-warning {
+        color: var(--text-warning);
+    }
+
+    .text-destructive {
+        color: var(--text-destructive);
+    }
+
+    .text-info {
+        color: var(--text-info);
+    }
+}

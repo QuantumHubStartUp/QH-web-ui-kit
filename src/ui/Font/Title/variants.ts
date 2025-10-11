@@ -2,16 +2,17 @@
 
 import { cva } from "class-variance-authority";
 
-// Title Component для Tailwind CSS v4
+
 export const titleVariants = cva(
   [
     'font-bold',
-    'text-foreground', // Используем CSS variable вместо фиксированных цветов
+    'text-foreground',
     'transition-colors',
     'duration-200',
-    // Data attributes для Tailwind v4
+
     'data-[theme=light]:text-gray-900',
-    'data-[theme=dark]:text-white'
+    'data-[theme=dark]:text-white',
+    "font-mono",
   ],
   {
     variants: {
@@ -45,7 +46,6 @@ export const titleVariants = cva(
         primary: [
           'from-blue-600', 'to-purple-600', 
           'dark:from-blue-400', 'dark:to-purple-400',
-          // Data attributes для Tailwind v4
           'data-[theme=light]:from-blue-600', 'data-[theme=light]:to-purple-600',
           'data-[theme=dark]:from-blue-400', 'data-[theme=dark]:to-purple-400'
         ],
