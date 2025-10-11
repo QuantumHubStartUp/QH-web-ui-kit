@@ -1,0 +1,32 @@
+:root {
+    --card-primary-bg: rgba(39, 38, 43, 1);
+    --card-primary-text: #ffffff;
+    --card-primary-hover: #464B50;
+    --card-primary-border: #000000;
+}
+  
+.dark {   
+    --card-primary-bg: rgba(39, 38, 43, 1);
+    --card-primary-text: #ffffff;
+    --card-primary-hover: #464B50;
+    --card-primary-border: #000000;   
+
+    --card-elevated-bg: rgba(70, 75, 80, 1);
+    --card-elevated-text: #ffffff;
+}
+  
+@layer utilities {
+    .card-primary {
+        background-color: var(--card-primary-bg);
+        color: var(--card-primary-text);
+        border: 1px solid var(--card-primary-border);
+        box-shadow: 5px 5px 5px #00000040;
+    }  
+
+    .card-elevated {
+        background-color: var(--card-elevated-bg);
+        color: var(--card-elevated-text);
+        box-shadow: 5px 5px 5px #00000040;
+        border-radius: 16px;
+    }
+}
