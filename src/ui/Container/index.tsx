@@ -1,7 +1,7 @@
+"use client";
+
 import React from "react"
 import { containerVariants } from "./variants"
-
-
 
 
 interface ContainerProps extends React.HTMLAttributes<HTMLDivElement> {
