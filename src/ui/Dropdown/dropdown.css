@@ -1,0 +1,73 @@
+
+
+:root {
+  /* Dropdown Button Colors */
+  --dropdown-bg-primary: #ffffff;
+  --dropdown-border-primary: #d1d5db;
+  --dropdown-text-primary: #111827;
+  --dropdown-hover-bg-primary: #f9fafb;
+  --dropdown-hover-border-primary: #9ca3af;
+  
+  --dropdown-bg-secondary: #f3f4f6;
+  --dropdown-border-secondary: #e5e7eb;
+  --dropdown-text-secondary: #374151;
+  --dropdown-hover-bg-secondary: #e5e7eb;
+  --dropdown-hover-border-secondary: #d1d5db;
+  
+  /* Dropdown Menu Colors */
+  --dropdown-menu-bg: #ffffff;
+  --dropdown-menu-border: #e5e7eb;
+  
+  /* Dropdown Item Colors */
+  --dropdown-item-text: #374151;
+  --dropdown-item-hover-bg: #f3f4f6;
+  --dropdown-item-hover-text: #111827;
+  
+  --dropdown-item-danger-text: #dc2626;
+  --dropdown-item-danger-hover-bg: #fef2f2;
+  --dropdown-item-danger-hover-text: #b91c1c;
+  
+  --dropdown-item-success-text: #059669;
+  --dropdown-item-success-hover-bg: #f0fdf4;
+  --dropdown-item-success-hover-text: #047857;
+  
+  --dropdown-item-disabled-text: #9ca3af;
+  
+  --dropdown-item-active-bg: #dbeafe;
+  --dropdown-item-active-text: #1e40af;
+}
+
+/* Темная тема через класс */
+.dark {
+  --dropdown-bg-primary: #1f2937;
+  --dropdown-border-primary: #4b5563;
+  --dropdown-text-primary: #ffffff;
+  --dropdown-hover-bg-primary: #374151;
+  --dropdown-hover-border-primary: #6b7280;
+  
+  --dropdown-bg-secondary: #374151;
+  --dropdown-border-secondary: #4b5563;
+  --dropdown-text-secondary: #e5e7eb;
+  --dropdown-hover-bg-secondary: #4b5563;
+  --dropdown-hover-border-secondary: #6b7280;
+  
+  --dropdown-menu-bg: #1f2937;
+  --dropdown-menu-border: #374151;
+  
+  --dropdown-item-text: #d1d5db;
+  --dropdown-item-hover-bg: #374151;
+  --dropdown-item-hover-text: #f9fafb;
+  
+  --dropdown-item-danger-text: #f87171;
+  --dropdown-item-danger-hover-bg: #7f1d1d;
+  --dropdown-item-danger-hover-text: #fecaca;
+  
+  --dropdown-item-success-text: #34d399;
+  --dropdown-item-success-hover-bg: #065f46;
+  --dropdown-item-success-hover-text: #a7f3d0;
+  
+  --dropdown-item-disabled-text: #6b7280;
+  
+  --dropdown-item-active-bg: #1e3a8a;
+  --dropdown-item-active-text: #93c5fd;
+}
