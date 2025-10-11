@@ -1,0 +1,30 @@
+
+:root {
+  --link-primary: #2563eb;
+  --link-primary-hover: #1d4ed8;
+  --link-secondary: #6b7280;
+  --link-secondary-hover: #374151;
+  --link-success: #059669;
+  --link-success-hover: #047857;
+  --link-danger: #dc2626;
+  --link-danger-hover: #b91c1c;
+  --link-ghost: #6b7280;
+  --link-ghost-hover: #374151;
+  --link-outline: #2563eb;
+  --link-outline-hover: #1d4ed8;
+}
+
+.dark {
+  --link-primary: #60a5fa;
+  --link-primary-hover: #93c5fd;
+  --link-secondary: #9ca3af;
+  --link-secondary-hover: #d1d5db;
+  --link-success: #34d399;
+  --link-success-hover: #6ee7b7;
+  --link-danger: #f87171;
+  --link-danger-hover: #fca5a5;
+  --link-ghost: #9ca3af;
+  --link-ghost-hover: #d1d5db;
+  --link-outline: #60a5fa;
+  --link-outline-hover: #93c5fd;
+}
