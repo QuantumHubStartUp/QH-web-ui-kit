@@ -1,7 +1,7 @@
 
 interface ISunIconProps {
-    size: string;
-    className?: string;
+  size: string;
+  className?: string;
 }
 
 export const SunIcon: React.FC<ISunIconProps> = ({ size, className = '' }) => {
