@@ -17,6 +17,12 @@ interface ButtonProps
   disabled?: boolean;
 }
 
+/**
+ * Компонент для создания кнопки
+ * 
+ * @param {ButtonProps} props - объект с параметрами
+ * @returns {JSX.Element} - элемент кнопки
+ */
 const Button: React.FC<ButtonProps> = ({
   className, 
   variant, 
