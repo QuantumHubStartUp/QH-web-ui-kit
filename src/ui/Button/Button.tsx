@@ -32,7 +32,7 @@ const Button: React.FC<ButtonProps> = ({
   children, 
   disabled,
   ...props 
-}) => {
+}: ButtonProps): JSX.Element => {
   const { isDisabled, showLoader } = useButtonState({ loading, disabled });
 
   return (
