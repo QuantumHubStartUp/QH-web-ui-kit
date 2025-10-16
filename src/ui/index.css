@@ -1,7 +1,7 @@
 @import "./Alert/styles/alert.css";
 @import "./Button/styles/button.css";
 @import "./Input/input.css";
-@import "./Card/card.css";
+@import "./Card/styles/card.css";
 @import "./Font/Text/text.css";
 @import "./Dropdown/dropdown.css";
 @import "./Modal/modal.css";
