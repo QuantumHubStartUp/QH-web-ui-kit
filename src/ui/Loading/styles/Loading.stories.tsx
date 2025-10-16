@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Loading } from "./index";
+import { Loading } from "../index";
 
 const meta: Meta<typeof Loading> = {
   title: "UI/Loading",
@@ -15,3 +15,5 @@ export const Primary: Story = {
     variant: "primary",
   },
 };
+
+

@@ -1,7 +1,8 @@
-import { Loading, LoadingProps } from ".";
 
+import { Loading, LoadingProps } from '../Loading';
+import { useLoadingContent } from '../hooks/useLoadingContent.hook';
 
-interface LoadingContentProps extends LoadingProps {
+export interface LoadingContentProps extends LoadingProps {
   isLoading: boolean;
   children: React.ReactNode;
   overlay?: boolean;
@@ -13,16 +14,18 @@ export const LoadingContent: React.FC<LoadingContentProps> = ({
   overlay = true,
   ...props
 }) => {
+  const { wrapperClass, contentClass } = useLoadingContent({ isLoading, overlay });
+
   if (!isLoading) return <>{children}</>;
 
   return (
     <div className="relative">
       {overlay && (
-        <div className="absolute inset-0 z-10 flex items-center justify-center bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm rounded-lg">
+        <div className={wrapperClass}>
           <Loading {...props} />
         </div>
       )}
-      <div className={isLoading && overlay ? 'opacity-50 pointer-events-none' : ''}>
+      <div className={contentClass}>
         {children}
       </div>
     </div>
