@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { type VariantProps } from 'class-variance-authority';
-import { linkVariants } from './variants';
+import { linkVariants } from './styles/variants';
 
 interface LinkProps 
   extends React.AnchorHTMLAttributes<HTMLAnchorElement>,
@@ -34,3 +34,4 @@ const Link: React.FC<LinkProps> = ({
 Link.displayName = 'Link';
 
 export { Link };
+export type { LinkProps };
