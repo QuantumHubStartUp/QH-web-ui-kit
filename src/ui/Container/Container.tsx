@@ -1,10 +1,10 @@
 "use client";
 
 import React from "react"
-import { containerVariants } from "./variants"
+import { containerVariants } from "./styles/variants"
 
 
-interface ContainerProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface ContainerProps extends React.HTMLAttributes<HTMLDivElement> {
     children: React.ReactNode
     size?: 'sm' | 'md' | 'lg' | 'xl' | '2xl'
 }
