@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { ToggleTheme } from ".";
+import { ToggleTheme } from "..";
 
 const meta: Meta<typeof ToggleTheme> = {
   title: "FEATURES/ToggleTheme",
