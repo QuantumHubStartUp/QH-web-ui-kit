@@ -4,6 +4,6 @@
 @import "./Card/styles/card.css";
 @import "./Font/Text/text.css";
 @import "./Dropdown/dropdown.css";
-@import "./Modal/modal.css";
+@import "./Modal/styles/modal.css";
 @import "./Notice/notice.css";
 @import "./Link/styles/link.css";

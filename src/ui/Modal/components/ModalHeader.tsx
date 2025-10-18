@@ -1,7 +1,7 @@
 "use client";
 
 import { VariantProps } from "class-variance-authority";
-import { modalHeaderVariants } from "./variants";
+import { modalHeaderVariants } from "../styles/variants";
 
 interface ModalHeaderProps 
   extends React.HTMLAttributes<HTMLDivElement>,

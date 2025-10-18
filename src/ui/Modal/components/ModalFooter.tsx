@@ -1,7 +1,7 @@
 "use client";
 
 import { VariantProps } from "class-variance-authority";
-import { modalFooterVariants } from "./variants";
+import { modalFooterVariants } from "../styles/variants";
 
 interface ModalFooterProps 
   extends React.HTMLAttributes<HTMLDivElement>,
