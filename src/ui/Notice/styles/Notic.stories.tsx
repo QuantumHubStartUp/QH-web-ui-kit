@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Notice } from "./index";
+import { Notice } from "../Notice";
+
 
 const meta: Meta<typeof Notice> = {
   title: "UI/Notice",
